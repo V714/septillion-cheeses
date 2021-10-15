@@ -31,7 +31,13 @@ function App(){
 
   useEffect(()=>{
     fetch('https://serpapi.com/search.json?q=cheese&tbm=isch&ijn=0&api_key=fe9cc3f3d7a0746fb430551bdeb5bcb202a138154ad2a5b25b0b94e8beadf49d',
-    )
+    {
+      method : "GET",
+      headers: {
+        "Access-Control-Allow-Origin" : "https://serpapi.com", 
+        "Access-Control-Allow-Credentials" : true 
+      }
+  })
     .then(result => result.json())
     .then(data => data.images_results.map(item => cheese_urls.push(item.thumbnail)));
 
