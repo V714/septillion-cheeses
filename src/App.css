@@ -33,6 +33,7 @@ body{
   align-items: center;
   max-width: 80vw;
   max-height: 80vh;
+  min-width: 40vw;
 }
 #start_button{
   display: flex;

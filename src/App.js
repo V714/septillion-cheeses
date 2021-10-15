@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import {urls} from './urls'; 
 
-let cheese_urls = []
+let cheese_urls = Array.from(urls)
 
 function App(){
   const defaultBigNumber = '17000000000000';
@@ -29,19 +30,7 @@ function App(){
     }
   },[viewType])
 
-  useEffect(()=>{
-    fetch('https://serpapi.com/search.json?q=cheese&tbm=isch&ijn=0&api_key=fe9cc3f3d7a0746fb430551bdeb5bcb202a138154ad2a5b25b0b94e8beadf49d',
-    {
-      method : "GET",
-      headers: {
-        "Access-Control-Allow-Origin" : "https://serpapi.com", 
-        "Access-Control-Allow-Credentials" : true 
-      }
-  })
-    .then(result => result.json())
-    .then(data => data.images_results.map(item => cheese_urls.push(item.thumbnail)));
-
-  },[])
+ 
 
   const getChangedNumbers = () => {
     const checkIfSmallNumberEqualsZero = parseInt(numbers.smallNumbers) === 0
@@ -68,6 +57,7 @@ function App(){
     setTimeout(() => setViewType('numberFirst'),3000)
   }
   const numbersClock = () => {
+    if(cheese_urls.length===0){cheese_urls=Array.from(urls)}
     setNumbers(getChangedNumbers());
     setTimeout(() => setViewType('cheese'),3000)
   }
