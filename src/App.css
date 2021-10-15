@@ -2,6 +2,8 @@ body{
   font-weight: bold;
   width: 100vw;
   height: 100vh;
+  font-size: 42px;
+  text-align: center;
 }
 
 #page{
@@ -18,7 +20,7 @@ body{
   color: #e9e9e9;
 }
 .cheese{
-  background-color: #222;
+  background-color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +44,7 @@ body{
   border: 1px solid #e9e9e9;
   border-radius: 10px;
   background-color: #e9e9e9;
-  padding: 5px 15px;
+  padding: 15px 30px;
 }
 .center-this-pls{
   background-color: #0974f6;
